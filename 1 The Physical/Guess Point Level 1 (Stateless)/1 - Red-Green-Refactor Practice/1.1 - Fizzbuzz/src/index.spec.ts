@@ -6,4 +6,12 @@ describe("fizzbuzz", () => {
 
     expect(fizzbuzz).toBeDefined();
   });
+
+  it("should return 1 when given input of 1", () => {
+    const fizzbuzz = new FizzBuzz();
+
+    const response = fizzbuzz.get(1);
+
+    expect(response).toEqual("1");
+  });
 });
