@@ -1,7 +1,9 @@
 export default class Palindrome {
   public isPalindrome(input: string): boolean {
+    const str = input.toLowerCase();
+
     return (
-      input === input.split("").reverse().join("")
+      str === str.split("").reverse().join("")
     );
   }
 }

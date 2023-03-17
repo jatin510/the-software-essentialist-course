@@ -24,4 +24,12 @@ describe("palindrome checker", () => {
       palindrome.isPalindrome(input)
     ).toBeFalsy();
   });
+
+  it("should be able to detect palindrome, when casing is off", () => {
+    const input = "Mom";
+
+    expect(
+      palindrome.isPalindrome(input)
+    ).toBeTruthy();
+  });
 });
