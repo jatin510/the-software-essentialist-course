@@ -32,4 +32,12 @@ describe("palindrome checker", () => {
       palindrome.isPalindrome(input)
     ).toBeTruthy();
   });
+
+  it("should be able to tell that 'Never Odd or Even' is palindrome", () => {
+    const input = "Never Odd Or Even";
+
+    expect(
+      palindrome.isPalindrome(input)
+    ).toBeTruthy();
+  });
 });
