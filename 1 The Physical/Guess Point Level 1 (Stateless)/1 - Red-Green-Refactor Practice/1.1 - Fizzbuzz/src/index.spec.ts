@@ -29,9 +29,15 @@ describe("fizzbuzz", () => {
     expect(response).toEqual("Fizz");
   });
 
-  it("should return 'BUZZ' when given input of 5", () => {
+  it("should return 'Buzz' when given input of 5", () => {
     const response = fizzbuzz.get(5);
 
     expect(response).toEqual("Buzz");
+  });
+
+  it("should return 'FizzBuzz' when given input of 15", () => {
+    const response = fizzbuzz.get(15);
+
+    expect(response).toEqual("FizzBuzz");
   });
 });
