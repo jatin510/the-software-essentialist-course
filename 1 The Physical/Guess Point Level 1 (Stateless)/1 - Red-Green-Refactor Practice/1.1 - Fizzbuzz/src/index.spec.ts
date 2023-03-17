@@ -28,4 +28,10 @@ describe("fizzbuzz", () => {
 
     expect(response).toEqual("Fizz");
   });
+
+  it("should return 'BUZZ' when given input of 5", () => {
+    const response = fizzbuzz.get(5);
+
+    expect(response).toEqual("Buzz");
+  });
 });
