@@ -1,15 +1,16 @@
 import Palindrome from "./index";
 
 describe("palindrome checker", () => {
-  it("palindrome should be defined", () => {
-    const palindrome = new Palindrome();
+  let palindrome: Palindrome;
 
+  beforeEach(() => {
+    palindrome = new Palindrome();
+  });
+  it("palindrome should be defined", () => {
     expect(palindrome).toBeDefined();
   });
 
   it("should able to tell 'dad' is palindrome", () => {
-    const palindrome = new Palindrome();
-
     const input = "dad";
     expect(
       palindrome.isPalindrome(input)
@@ -17,8 +18,6 @@ describe("palindrome checker", () => {
   });
 
   it("should be able to tell 'jatin' is not palindrome", () => {
-    const palindrome = new Palindrome();
-
     const input = "jatin";
 
     expect(
