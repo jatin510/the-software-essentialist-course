@@ -6,4 +6,13 @@ describe("palindrome checker", () => {
 
     expect(palindrome).toBeDefined();
   });
+
+  it("should able to tell 'dad' is palindrome", () => {
+    const palindrome = new Palindrome();
+
+    const input = "dad";
+    expect(
+      palindrome.isPalindrome(input)
+    ).toBeTruthy();
+  });
 });
