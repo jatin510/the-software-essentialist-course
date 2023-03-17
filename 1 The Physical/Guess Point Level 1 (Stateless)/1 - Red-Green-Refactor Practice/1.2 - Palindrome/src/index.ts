@@ -1,5 +1,7 @@
 export default class Palindrome {
   public isPalindrome(input: string): boolean {
-    return true;
+    return (
+      input === input.split("").reverse().join("")
+    );
   }
 }
