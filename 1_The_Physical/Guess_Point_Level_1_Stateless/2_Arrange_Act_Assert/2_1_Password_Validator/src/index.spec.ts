@@ -6,4 +6,17 @@ describe("password validator", () => {
 
     expect(passwordValidator).toBeDefined();
   });
+
+  it("If password length is between 5-15 characters, return true ", () => {
+    const passwordValidator = new PasswordValidator();
+
+    // arrange
+    const password = "pass";
+
+    // act
+    const response = passwordValidator.validate(password);
+
+    // assert
+    expect(response).toBeFalsy();
+  });
 });
