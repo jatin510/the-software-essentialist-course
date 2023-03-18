@@ -11,7 +11,7 @@ describe("password validator", () => {
     const passwordValidator = new PasswordValidator();
 
     // arrange
-    const password = "password1";
+    const password = "Password1";
 
     // act
     const response = passwordValidator.validate(password);
@@ -50,5 +50,21 @@ describe("password validator", () => {
     expect(() => {
       passwordValidator.validate(password);
     }).toThrowError(new Error("Invalid password: should contain atleast 1 digit"));
+  });
+
+  it("If password doesn't contain Uppercase letter: throw error", () => {
+    const passwordValidator = new PasswordValidator();
+
+    // arrange
+    const password = "password1";
+
+    // act
+    // arrange
+    expect(() => {
+      passwordValidator.validate(password);
+    }).toThrowError();
+    expect(() => {
+      passwordValidator.validate(password);
+    }).toThrowError(new Error("Invalid password: should contain uppercase character"));
   });
 });

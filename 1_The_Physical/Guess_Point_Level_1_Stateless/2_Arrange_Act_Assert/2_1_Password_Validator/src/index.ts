@@ -11,6 +11,11 @@ export default class PasswordValidator {
       throw new Error("Invalid password: should contain atleast 1 digit");
     }
 
+    const hasUpperCaseCharacter = this.validateForUppercase(password);
+    if (!hasUpperCaseCharacter) {
+      throw new Error("Invalid password: should contain uppercase character");
+    }
+
     return true;
   }
 
@@ -21,6 +26,11 @@ export default class PasswordValidator {
 
   private validateForDigit(password: string): boolean {
     const hasNumber = /\d/;
+    return hasNumber.test(password);
+  }
+
+  private validateForUppercase(password: string): boolean {
+    const hasNumber = /[A-Z]/;
     return hasNumber.test(password);
   }
 }
