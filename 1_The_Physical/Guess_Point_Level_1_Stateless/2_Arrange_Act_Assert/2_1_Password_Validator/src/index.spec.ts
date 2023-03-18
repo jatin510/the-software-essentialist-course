@@ -1,15 +1,17 @@
 import PasswordValidator from "./index";
 
 describe("password validator", () => {
-  it("passwordValidator instance should be defined", () => {
-    const passwordValidator = new PasswordValidator();
+  let passwordValidator: PasswordValidator;
 
+  beforeEach(() => {
+    passwordValidator = new PasswordValidator();
+  });
+
+  it("passwordValidator instance should be defined", () => {
     expect(passwordValidator).toBeDefined();
   });
 
   it("If password length is between 5-15 characters, return true ", () => {
-    const passwordValidator = new PasswordValidator();
-
     // arrange
     const password = "Password1";
 
@@ -21,8 +23,6 @@ describe("password validator", () => {
   });
 
   it("If password length is not in length between 5-15 characters, throw range error ", () => {
-    const passwordValidator = new PasswordValidator();
-
     // arrange
     const password = "pass";
 
@@ -37,8 +37,6 @@ describe("password validator", () => {
   });
 
   it("If password doesn't contain digit: throw error", () => {
-    const passwordValidator = new PasswordValidator();
-
     // arrange
     const password = "password";
 
@@ -53,8 +51,6 @@ describe("password validator", () => {
   });
 
   it("If password doesn't contain Uppercase letter: throw error", () => {
-    const passwordValidator = new PasswordValidator();
-
     // arrange
     const password = "password1";
 
