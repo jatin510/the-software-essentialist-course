@@ -11,12 +11,12 @@ describe("password validator", () => {
     const passwordValidator = new PasswordValidator();
 
     // arrange
-    const password = "pass";
+    const password = "password";
 
     // act
     const response = passwordValidator.validate(password);
 
     // assert
-    expect(response).toBeFalsy();
+    expect(response).toBeTruthy();
   });
 });
