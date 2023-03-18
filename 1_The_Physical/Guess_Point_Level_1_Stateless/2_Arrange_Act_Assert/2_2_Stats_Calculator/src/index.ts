@@ -27,4 +27,8 @@ export default class StatsCalculator {
     }
     return maxValue;
   }
+
+  getCount(): number {
+    return this._values.length;
+  }
 }

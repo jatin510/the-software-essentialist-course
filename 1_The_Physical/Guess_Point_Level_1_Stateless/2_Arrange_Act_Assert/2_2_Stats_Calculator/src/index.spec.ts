@@ -29,4 +29,15 @@ describe("stats calculator", () => {
     // assert
     expect(result).toEqual(24);
   });
+
+  it("should get the the length of the values", () => {
+    // arrange
+    const statsCalculator = new StatsCalculator([12, 1, 24, -4]);
+
+    // act
+    const result = statsCalculator.getCount();
+
+    // assert
+    expect(result).toEqual(4);
+  });
 });
