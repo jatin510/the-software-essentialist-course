@@ -1,4 +1,3 @@
-import { Stats, stat } from "fs";
 import StatsCalculator from "./index";
 
 describe("stats calculator", () => {
@@ -39,5 +38,16 @@ describe("stats calculator", () => {
 
     // assert
     expect(result).toEqual(4);
+  });
+
+  it("should get the average of all the values", () => {
+    // arrange
+    const statsCalculator = new StatsCalculator([1, 2, 3, 4]);
+
+    // act
+    const result = statsCalculator.getAverage();
+
+    // assert
+    expect(result).toEqual(2.5);
   });
 });
