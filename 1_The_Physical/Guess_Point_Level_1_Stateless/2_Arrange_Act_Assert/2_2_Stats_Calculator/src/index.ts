@@ -16,4 +16,15 @@ export default class StatsCalculator {
 
     return minValue;
   }
+
+  maxValue(): number {
+    let maxValue = Number.MIN_VALUE;
+
+    for (let value of this._values) {
+      if (value > maxValue) {
+        maxValue = value;
+      }
+    }
+    return maxValue;
+  }
 }
