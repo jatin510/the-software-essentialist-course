@@ -19,4 +19,20 @@ describe("password validator", () => {
     // assert
     expect(response).toBeTruthy();
   });
+
+  it("If password length is not in length between 5-15 characters, throw range error ", () => {
+    const passwordValidator = new PasswordValidator();
+
+    // arrange
+    const password = "pass";
+
+    // act
+    // assert
+    expect(() => {
+      passwordValidator.validate(password);
+    }).toThrowError();
+    expect(() => {
+      passwordValidator.validate(password);
+    }).toThrowError(new RangeError("Invalid password: Length should be between 5-15 characters"));
+  });
 });
