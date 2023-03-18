@@ -1,3 +1,4 @@
+import { Stats } from "fs";
 import StatsCalculator from "./index";
 
 describe("stats calculator", () => {
@@ -5,5 +6,16 @@ describe("stats calculator", () => {
     const statsCalculator = new StatsCalculator([]);
 
     expect(statsCalculator).toBeDefined();
+  });
+
+  it("should return minimum value", () => {
+    // arrange
+    const statsCalculator = new StatsCalculator([12, 1, 45, -4]);
+
+    // act
+    const result = statsCalculator.minValue();
+
+    // assert
+    expect(result).toEqual(-4);
   });
 });
