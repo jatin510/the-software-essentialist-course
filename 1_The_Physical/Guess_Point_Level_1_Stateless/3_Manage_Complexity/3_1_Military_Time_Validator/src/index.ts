@@ -1,5 +1,9 @@
 export default class MilitaryTimeValidator {
   public isValidTime(time: string) {
+
+	const validTimeFormatRegex = /\d{2}:\d{2} - \d{2}:\d{2}/gm;
+	if(!validTimeFormatRegex.test(time)) return false;
+
     const MAX_HOUR = 23;
     const MAX_MINUTE = 59;
 
