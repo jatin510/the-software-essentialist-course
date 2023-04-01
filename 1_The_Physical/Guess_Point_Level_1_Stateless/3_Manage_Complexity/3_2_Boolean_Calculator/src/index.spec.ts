@@ -8,4 +8,12 @@ describe("boolean calculator", () => {
 
     expect(response).toBeTruthy();
   });
+
+    it('"FALSE" should return "false"', () => {
+      const expression = "FALSE";
+
+      const response = BooleanCalculator.evaluate(expression);
+
+      expect(response).toBeFalsy();
+    });
 });
