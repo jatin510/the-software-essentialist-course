@@ -1,13 +1,14 @@
 import BooleanCalculator from "./index";
 
 describe("boolean calculator", () => {
-  it('"TRUE" should return "true"', () => {
-    const expression = "TRUE";
+  describe("Should be able to handle the single values", () => {
+    it('"TRUE" should return "true"', () => {
+      const expression = "TRUE";
 
-    const response = BooleanCalculator.evaluate(expression);
+      const response = BooleanCalculator.evaluate(expression);
 
-    expect(response).toBeTruthy();
-  });
+      expect(response).toBeTruthy();
+    });
 
     it('"FALSE" should return "false"', () => {
       const expression = "FALSE";
@@ -16,4 +17,5 @@ describe("boolean calculator", () => {
 
       expect(response).toBeFalsy();
     });
+  });
 });
