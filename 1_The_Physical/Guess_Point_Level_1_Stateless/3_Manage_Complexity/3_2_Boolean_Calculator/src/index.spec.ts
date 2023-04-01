@@ -18,4 +18,14 @@ describe("boolean calculator", () => {
       expect(response).toBeFalsy();
     });
   });
+
+  describe("Should be able to handle the NOT operator", () => {
+    it('"NOT TRUE" should return "false"', () => {
+      const expression = "NOT TRUE";
+
+      const response = BooleanCalculator.evaluate(expression);
+
+      expect(response).toBeFalsy();
+    });
+  });
 });
