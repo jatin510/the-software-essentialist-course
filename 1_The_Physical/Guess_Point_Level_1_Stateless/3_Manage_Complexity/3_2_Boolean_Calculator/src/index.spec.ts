@@ -27,5 +27,13 @@ describe("boolean calculator", () => {
 
       expect(response).toBeFalsy();
     });
+
+	 it('"NOT FALSE" should return "true"', () => {
+     const expression = "NOT FALSE";
+
+     const response = BooleanCalculator.evaluate(expression);
+
+     expect(response).toBeTruthy();
+   });
   });
 });
