@@ -1,16 +1,21 @@
-import MilitaryTimeValidator from './index'
+import MilitaryTimeValidator from "./index";
 
-describe('military time validator', () => {
+describe("military time validator", () => {
+  const militaryTimeValidator = new MilitaryTimeValidator();
 
+  it('should tell "01:12 - 14:32" is valid military time  ', () => {
+    const time = "01:12 - 14:32";
 
-	const militaryTimeValidator = new MilitaryTimeValidator();
+    const response = militaryTimeValidator.isValidTime(time);
 
-	it('should tell "01:12 - 14:32" is valid military time  ',()=>{
+    expect(response).toBe(true);
+  });
 
-		const time = "01:12 - 14:32";
+  it('should tell "25:12 - 12:30" is not a valid military time, the start hour is more than or equal to 24', () => {
+    const time = "25:12 - 12:30";
 
-		const response = militaryTimeValidator.isValidTime(time);
+    const response = militaryTimeValidator.isValidTime(time);
 
-		expect(response).toBe(true)
-	})
-})
+    expect(response).toBe(false);
+  });
+});
