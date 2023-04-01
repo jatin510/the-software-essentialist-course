@@ -50,4 +50,12 @@ describe("military time validator", () => {
 
    expect(response).toBe(false);
   })
+
+  it('should tell "*12:02- 23:23" is not a valid military time, due to bad format', () => {
+    const time = "*12:02 - 23:23";
+
+    const response = militaryTimeValidator.isValidTime(time);
+
+    expect(response).toBe(false);
+  });
 });
