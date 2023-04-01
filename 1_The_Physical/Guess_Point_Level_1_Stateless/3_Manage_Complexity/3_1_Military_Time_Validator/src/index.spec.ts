@@ -18,4 +18,12 @@ describe("military time validator", () => {
 
     expect(response).toBe(false);
   });
+
+    it('should tell "23:60 - 12:30" is not a valid military time, the start minute is more than or equal to 60 seconds', () => {
+      const time = "23:60 - 12:30";
+
+      const response = militaryTimeValidator.isValidTime(time);
+
+      expect(response).toBe(false);
+    });
 });
