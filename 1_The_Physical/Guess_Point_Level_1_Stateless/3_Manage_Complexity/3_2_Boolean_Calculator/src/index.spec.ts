@@ -28,12 +28,27 @@ describe("boolean calculator", () => {
       expect(response).toBeFalsy();
     });
 
-	 it('"NOT FALSE" should return "true"', () => {
-     const expression = "NOT FALSE";
+    it('"NOT FALSE" should return "true"', () => {
+      const expression = "NOT FALSE";
 
-     const response = BooleanCalculator.evaluate(expression);
+      const response = BooleanCalculator.evaluate(expression);
 
-     expect(response).toBeTruthy();
-   });
+      expect(response).toBeTruthy();
+    });
+  });
+
+  describe("Should be able to handle the AND operator", () => {
+    const expressions: [string, boolean][] = [
+      ["TRUE AND TRUE", true],
+      ["TRUE AND FALSE", false],
+      ["FALSE AND TRUE", false],
+      ["FALSE AND FALSE", false],
+    ];
+
+    expressions.forEach(([input, expectedOutput]) => {
+      test(`Testing expression: ${input} should give ${expectedOutput}`, () => {
+        expect(BooleanCalculator.evaluate(input)).toBe(expectedOutput);
+      });
+    });
   });
 });
