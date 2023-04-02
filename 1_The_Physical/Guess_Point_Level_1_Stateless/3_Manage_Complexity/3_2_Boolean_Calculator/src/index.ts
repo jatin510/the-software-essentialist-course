@@ -1,18 +1,21 @@
 export default class BooleanCalculator {
   public static evaluate(expression: string): boolean {
-    if (expression.includes("OR")) {
-      const [leftExpression, rightExpression] = expression.split(" OR ");
+    expression = expression.toLowerCase();
+
+
+    if (expression.includes("or")) {
+      const [leftExpression, rightExpression] = expression.split(" or ");
       return this.evaluate(leftExpression) || this.evaluate(rightExpression);
     }
 
-    if (expression.includes("AND")) {
-      const [leftExpression, rightExpression] = expression.split(" AND ");
+    if (expression.includes("and")) {
+      const [leftExpression, rightExpression] = expression.split(" and ");
       return this.evaluate(leftExpression) && this.evaluate(rightExpression);
     }
 
-    if (expression === "NOT TRUE") return false;
-    if (expression === "NOT FALSE") return true;
-    if (expression === "TRUE") return true;
+    if (expression === "not true") return false;
+    if (expression === "not false") return true;
+    if (expression === "true") return true;
     return false;
   }
 }
