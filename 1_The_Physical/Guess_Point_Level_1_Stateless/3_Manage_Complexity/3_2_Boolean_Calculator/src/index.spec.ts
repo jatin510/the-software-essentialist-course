@@ -51,4 +51,19 @@ describe("boolean calculator", () => {
       });
     });
   });
+
+  describe("Should be able to handle the OR operator", () => {
+    const expressions: [string, boolean][] = [
+      ["TRUE OR TRUE", true],
+      ["TRUE OR FALSE", true],
+      ["FALSE OR TRUE", true],
+      ["FALSE OR FALSE", false],
+    ];
+
+    expressions.forEach(([input, expectedOutput]) => {
+      test(`Testing expression: ${input} should give ${expectedOutput}`, () => {
+        expect(BooleanCalculator.evaluate(input)).toBe(expectedOutput);
+      });
+    });
+  });
 });
