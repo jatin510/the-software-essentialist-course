@@ -79,4 +79,20 @@ describe("boolean calculator", () => {
       });
     });
   });
+
+  describe("Should be able to handle the parentheses", () => {
+    const expressions: [string, boolean][] = [
+      ["(TRUE OR TRUE OR TRUE) AND FALSE", false],
+      ["NOT (TRUE AND TRUE)", false],
+      ["(TRUE AND FALSE) OR (TRUE AND TRUE)", true],
+      ["(TRUE AND FALSE OR TRUE) OR (TRUE AND TRUE AND FALSE)", true],
+      ["(FALSE OR FALSE) AND (TRUE OR FALSE)", false],
+    ];
+
+    expressions.forEach(([input, expectedOutput]) => {
+      test(`Testing expression: ${input} should give ${expectedOutput}`, () => {
+        expect(BooleanCalculator.evaluate(input)).toBe(expectedOutput);
+      });
+    });
+  });
 });
