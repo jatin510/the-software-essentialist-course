@@ -66,4 +66,17 @@ describe("boolean calculator", () => {
       });
     });
   });
+
+  describe("Should be able to handle the combination of operators with precedence of 'NOT' < 'AND' < 'OR'", () => {
+    const expressions: [string, boolean][] = [
+      ["TRUE OR TRUE OR TRUE AND FALSE", true],
+      ["TRUE OR FALSE AND NOT FALSE", true],
+    ];
+
+    expressions.forEach(([input, expectedOutput]) => {
+      test(`Testing expression: ${input} should give ${expectedOutput}`, () => {
+        expect(BooleanCalculator.evaluate(input)).toBe(expectedOutput);
+      });
+    });
+  });
 });

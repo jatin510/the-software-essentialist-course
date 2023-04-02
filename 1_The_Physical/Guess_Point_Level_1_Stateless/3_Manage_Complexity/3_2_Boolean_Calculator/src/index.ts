@@ -1,13 +1,13 @@
 export default class BooleanCalculator {
   public static evaluate(expression: string): boolean {
-    if (expression.includes("AND")) {
-      const [leftExpression, rightExpression] = expression.split(" AND ");
-      return this.evaluate(leftExpression) && this.evaluate(rightExpression);
-    }
-
     if (expression.includes("OR")) {
       const [leftExpression, rightExpression] = expression.split(" OR ");
       return this.evaluate(leftExpression) || this.evaluate(rightExpression);
+    }
+
+    if (expression.includes("AND")) {
+      const [leftExpression, rightExpression] = expression.split(" AND ");
+      return this.evaluate(leftExpression) && this.evaluate(rightExpression);
     }
 
     if (expression === "NOT TRUE") return false;
