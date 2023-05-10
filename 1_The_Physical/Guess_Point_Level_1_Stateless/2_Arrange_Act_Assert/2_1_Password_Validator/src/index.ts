@@ -1,8 +1,12 @@
+const isValidLength = (password: string): boolean => {
+  const length = password.length;
+
+  return length >= 5 && length <= 15;
+};
+
 export class PasswordValidator {
   public static validate(password: string) {
-    const length = password.length;
-
-    if (length >= 5 && length <= 15) {
+    if (isValidLength(password)) {
       return { result: true, errors: [] };
     }
 
