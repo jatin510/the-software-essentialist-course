@@ -29,7 +29,7 @@ describe("password validator", () => {
 
   it("return result as true and response of errors array to be 0", () => {
     // arrange
-    const password = "hello1world";
+    const password = "Hello1world";
 
     // act
     const response: ValidatePasswordResponse = PasswordValidator.validate(password);
@@ -47,5 +47,15 @@ describe("password validator", () => {
     expect(response.result).toBe(false);
     expect(response.errors.length).toBeGreaterThanOrEqual(1);
     expect(response.errors).toContain("MissingDigitError");
+  });
+
+  it("returns an error when the password does not contain atLeast 1 uppercase letter", () => {
+    const password = "helloworld1";
+
+    const response: ValidatePasswordResponse = PasswordValidator.validate(password);
+
+    expect(response.result).toBe(false);
+    expect(response.errors.length).toBeGreaterThanOrEqual(1);
+    expect(response.errors).toContain("MissingUppercaseError");
   });
 });
