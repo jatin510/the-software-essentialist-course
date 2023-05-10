@@ -58,4 +58,16 @@ describe("password validator", () => {
     expect(response.errors.length).toBeGreaterThanOrEqual(1);
     expect(response.errors).toContain("MissingUppercaseError");
   });
+
+  it("returns multiple errors ", () => {
+    const password = "abc";
+
+    const response: ValidatePasswordResponse = PasswordValidator.validate(password);
+
+    expect(response.result).toBe(false);
+    expect(response.errors.length).toBeGreaterThanOrEqual(1);
+    expect(response.errors).toContain("MissingUppercaseError");
+    expect(response.errors).toContain("MissingDigitError");
+    expect(response.errors).toContain("InvalidLengthError");
+  });
 });

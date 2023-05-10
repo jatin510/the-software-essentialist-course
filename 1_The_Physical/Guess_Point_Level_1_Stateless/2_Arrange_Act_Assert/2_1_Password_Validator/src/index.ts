@@ -34,7 +34,6 @@ export class PasswordValidator {
     }
 
     if (!hasUpperCase(password)) {
-      console.log("hhello");
       errors.push("MissingUppercaseError");
     }
 
