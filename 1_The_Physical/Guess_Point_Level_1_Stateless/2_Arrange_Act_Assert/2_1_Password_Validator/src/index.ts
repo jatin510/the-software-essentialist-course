@@ -1,6 +1,8 @@
+type PasswordError = "InvalidLengthError" | "MissingDigitError";
+
 export type ValidatePasswordResponse = {
   result: boolean;
-  errors: string[];
+  errors: PasswordError[];
 };
 
 const isValidLength = (password: string): boolean => {
@@ -15,7 +17,7 @@ const hasDigit = (password: string) => {
 
 export class PasswordValidator {
   public static validate(password: string) {
-    let errors = [];
+    let errors: PasswordError[] = [];
     if (!isValidLength(password)) {
       errors.push("InvalidLengthError");
     }
